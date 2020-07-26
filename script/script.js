@@ -7,15 +7,12 @@ $(document).ready(function() {
 			animateFunction: 'ease'
 		});
 
-		$('video')[0].play();
+		
 		// text align
 		$('.info .roland_info .info_text').css({
 			top:($('.info .roland_info').height()/2) - ($('.info .roland_info .info_text').height()/2)
 		});
-		
-		
-		
-
+	
 		//slide img
 		var button = $('.variation .buttonlist li.button');
 		var pause = $('.variation .buttonlist li.pause');
@@ -79,6 +76,11 @@ $(document).ready(function() {
 			$('.footer ul').css({
 				top:($('.footer').height()/2) - ($('.footer ul').height()/2)
 			});
+
+			// pc version에서만 비디오 자동재생
+			if($(window).width()>680) {
+				$('video')[0].play();
+			}
 
 		});
 		$(window).trigger('resize');
